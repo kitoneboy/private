@@ -70,6 +70,7 @@ if __name__ == '__main__':
                     print(f"Unsupported image type: {type(image)}")
                     continue
 
+
                 image_resized = image_pil.resize((224, 224))  # Resize image to 224x224
                 image_np = np.array(image_resized, dtype=np.uint8)
                 output_images.append(image_np)
@@ -85,4 +86,4 @@ if __name__ == '__main__':
         output_array = np.stack(output_images)
         np.save("prediction.npy", output_array)
         print('Saved prediction.npy successfully')
-
+		
